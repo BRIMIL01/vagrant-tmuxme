@@ -10,6 +10,9 @@ if Vagrant::VERSION < "1.1.0"
   raise "The Vagrant Tmuxme plugin is only compatible with Vagrant 1.1+"
 end
 
+# Add our custom translations to the load path
+I18n.load_path << File.expand_path("../../../locales/en.yml", __FILE__)
+
 module VagrantPlugins
   module Tmuxme
     class Plugin < Vagrant.plugin("2")
@@ -24,6 +27,11 @@ module VagrantPlugins
       guest_capability("linux", "ensure_tmux") do
         require_relative "cap/ensure_tmux"
         Cap::EnsureTmux
+      end
+
+      guest_capability("linux", "ensure_tmuxme") do
+        require_relative "cap/ensure_tmuxme"
+        Cap::EnsureTmuxme
       end
     end
   end

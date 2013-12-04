@@ -7,9 +7,9 @@ module VagrantPlugins
           return unless machine.communicate.ready?
  
           if tmux_installed?(machine)
-            env.ui.info I18n.t('vagrant_tmux.tmux_installed')
+            env.ui.info I18n.t('vagrant_tmuxme.tmux_installed')
           else
-            env.ui.info I18n.t('vagrant_tmux.installing_tmux')
+            env.ui.info I18n.t('vagrant_tmuxme.installing_tmux')
             install_tmux!(machine)
           end
         end
