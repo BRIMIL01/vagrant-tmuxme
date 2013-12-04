@@ -1,24 +1,27 @@
-# Vagrant::Tmuxme
+# Vagrant-Tmuxme
 
-TODO: Write a gem description
+Start tmuxme sessions in a running vagrant instance. The safe way to pair with
+tmuxme.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Build the gem locally
 
-    gem 'vagrant-tmuxme'
+    rake build
 
-And then execute:
+Install the built gem in vagrant
 
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install vagrant-tmuxme
+    vagrant plugin install pkg/vagrant-tmuxme-0.0.1.gem
 
 ## Usage
 
-TODO: Write usage instructions here
+A new tmuxme session can be started in a running vagrant instance by running
+the following:
+
+    vagrant tmuxme [tmuxme user]
+
+**Note** the directory that you start vagrant in is automatically shared with
+the vm and will be accessible to any tmuxme guest.
 
 ## Contributing
 
