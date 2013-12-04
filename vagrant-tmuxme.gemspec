@@ -7,10 +7,10 @@ Gem::Specification.new do |spec|
   spec.name          = "vagrant-tmuxme"
   spec.version       = VagrantPlugins::Tmuxme::VERSION
   spec.authors       = ["Brian Miller"]
-  spec.email         = ["brian.miller@reachlocal.com"]
+  spec.email         = ["brimil01@gmail.com"]
   spec.description   = %q{Tmuxme the safe way}
   spec.summary       = %q{Tmuxme the safe way}
-  spec.homepage      = ""
+  spec.homepage      = "http://www.tmux.me"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
