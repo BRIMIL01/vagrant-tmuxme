@@ -1,4 +1,14 @@
-require "vagrant"
+begin
+  require "vagrant"
+rescue LoadError
+  raise "The Vagrant Tmuxme plugin must be run within Vagrant."
+end
+
+# This is a sanity check to make sure no one is attempting to install
+# this into an early Vagrant version.
+if Vagrant::VERSION < "1.1.0"
+  raise "The Vagrant Tmuxme plugin is only compatible with Vagrant 1.1+"
+end
 
 module VagrantPlugins
   module Tmuxme
@@ -11,9 +21,9 @@ module VagrantPlugins
         TmuxmeCommand
       end
 
-      config "tmuxme" do
-        require_relative "config"
-        Config
+      guest_capability("linux", "ensure_tmux") do
+        require_relative "cap/ensure_tmux"
+        Cap::EnsureTmux
       end
     end
   end

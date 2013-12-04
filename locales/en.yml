@@ -1,0 +1,18 @@
+en:
+  vagrant_tmuxme:
+    ensure_tmux: |-
+      Ensuring that tmux is installed on guest.
+    tmux_installed: |-
+      Tmux already installed.
+    installing_tmux: |-
+      Installing tmux...
+    ensure_tmuxme: |-
+      Ensuring that tmuxme is installed on guest.
+    tmuxme_installed: |-
+      Tmuxme already installed.
+    installing_tmuxme: |-
+      Installing tmuxme...
+  vagrant:
+    errors:
+      tmux_not_available: |-
+        Unable to install tmux on a machine of guest type '%{guest}'.
